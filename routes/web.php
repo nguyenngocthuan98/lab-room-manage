@@ -26,3 +26,4 @@ Route::get('/', function () {
 	Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
 
 Route::resource('users', 'UserController');
+Route::resource('tags','TagsController');
