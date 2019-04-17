@@ -27,8 +27,8 @@ class TaskRepository
     }
 
     public function destroy($id){
-    	$typedevice = Tasks::findOrFail($id);
-    	$typedevice->delete();
+    	$task = Tasks::findOrFail($id);
+    	$task->delete();
     	return response()->json(null,204);
     }
 
