@@ -21,6 +21,16 @@ class TypeDevice extends Controller
         $itemPerPage = 20;
         $typeDevice = TypeDevice::paginate($itemPerPage);
         return view('typeDevice.index',['typeDevice'=>$typeDevice]);
+
+        $filters = request()->only('action', 'key');
+        if($filters && $filters['action'] == 'search'){
+            //For search
+            $typedevicesList = DB::table('type_devices')->where('name', 'like', '%'.$filters['key'].'%')->orderBy('id','ASC')->paginate(20);
+        }else{
+            //For all user
+            $typedevicesList = DB::table('type_devices')->orderBy('id','DESC')->paginate(10);
+        }        
+        return view('typedevices.index', ['typedevicesList' => $typedevicesList]);
     }
 
     /**

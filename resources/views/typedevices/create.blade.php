@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Add New Devices')
+@section('title', trans('typedevices/create.title'))
 
 @section('body')
 @include('partials/navigation_bar')
@@ -9,12 +9,12 @@
 	<div class="from-group">
 		<form action="{{ url('typedevices') }}" method="post">
 			@csrf
-				<label for="name">Name:</label>
+				<label for="name">{{ trans('typedevices/create.name') }}</label>
 				<label class="alertdevice">{{ $errors->has('name') ? $errors->first('name') : ''}}</label>
 				<input type="text" class="form-control {{ $errors->has('name') ? 'has-error' : ''}}" placeholder="Enter Name" name="name" id="name">
 
 			<div class="form-group">
-				<button id="btn-form-user" type="submit" class="btn btn-primary">Create</button>
+				<button id="btn-form-user" type="submit" class="btn btn-primary">{{ trans('typedevices/create.create') }}</button>
 			</div>
 		</form>
 	</div>
