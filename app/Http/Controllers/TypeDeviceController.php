@@ -9,7 +9,7 @@ use App\Http\Requests\TypeDeviceRequest;
 
 
 
-class TypeDevice extends Controller
+class TypeDeviceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +18,6 @@ class TypeDevice extends Controller
      */
     public function index()
     {
-        $itemPerPage = 20;
-        $typeDevice = TypeDevice::paginate($itemPerPage);
-        return view('typeDevice.index',['typeDevice'=>$typeDevice]);
-
         $filters = request()->only('action', 'key');
         if($filters && $filters['action'] == 'search'){
             //For search
@@ -40,7 +36,7 @@ class TypeDevice extends Controller
      */
     public function create()
     {
-        return view('typeDevice.create');
+        return view('typedevices.create');
     }
 
     /**
@@ -52,7 +48,7 @@ class TypeDevice extends Controller
     public function store(TypeDeviceRequest $request)
     {
         TypeDevice::create($request->all());
-        return redirect('typeDevice');
+        return redirect('typedevices');
     }
 
     /**
@@ -63,8 +59,7 @@ TypeDevice     */
     public function show($id)
     {
         $typeDevice = TypeDevice::findOrFail($id);
-        // $TypeDevice = DB::table('TypeDevice')->where('id',$id)->first();
-        return view('typeDevice.show', ['typeDevice', $typeDevice]);
+        return view('typedevices.show', ['typeDevice', $typeDevice]);
     }
 
     /**
@@ -75,8 +70,8 @@ TypeDevice     */
      */
     public function edit($id)
     {
-        $typeDevice = TypeDevice::where('id', $id)->first();
-        return view('typeDevice.edit',['typeDevice'=>$typedevices]);
+        $typeDevice = typeDevice::where('id',$id)->first();
+        return view('typedevices.edit',['typedevices' => $typeDevice]); 
     }
 
     /**
@@ -88,7 +83,7 @@ TypeDevice     */
      */
     public function update(TypeDeviceRequest $request, $id)
     {
-        $typedevices = typedevices::findOrFail($id);
+        $typedevices = typeDevice::findOrFail($id);
         $typedevices->Update($request->all());
         // dd($typedevices);
         return redirect('typedevices');
@@ -102,7 +97,7 @@ TypeDevice     */
      */
     public function destroy($id)
     {
-        TypeDevices::destroy($id);
+        TypeDevice::destroy($id);
         return redirect('/typedevices');
     }
 

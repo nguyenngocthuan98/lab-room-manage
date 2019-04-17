@@ -84,7 +84,7 @@ Route::middleware(['guest', 'locale'])->group(function () {
 	| Routes Type Device
 	|--------------------------------------------------------------------------
 	*/
-	Route::resource('typedevices','TypeDevicesController');
+	Route::resource('typedevices','TypeDeviceController');
 	
 	/*
 	|--------------------------------------------------------------------------

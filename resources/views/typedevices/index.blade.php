@@ -23,15 +23,15 @@
 		<table class="list-user">
 			<thead>
 				<tr>
-					<th><center>STT</center></th>
-					<th><center>NAME</center></th>
-					<th><center>OPTION</center></th>
+					<th><center>{{ trans('users/index.stt') }}</center></th>
+					<th><center>{{ trans('users/index.name') }}</center></th>
+					<th><center>{{ trans('users/index.option') }}</center></th>
 
 
 				</tr>
 			</thead>
 			@php($i = 0)
-			@foreach($typedeviceList as $typedevice)
+			@foreach($typedevicesList as $typedevice)
 			<tbody>
 				<tr @if($i% 2 == 0) class="old" @else class="even" @endif >
 					<td><center><?php echo ++$i; ?></center></td>
