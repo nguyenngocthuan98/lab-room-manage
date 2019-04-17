@@ -1,9 +1,7 @@
 <?php
 
 return [
-
-    "open" => "OPEN",
-    "close" => "CLOSE",
-    "crash" => "CRASH",
-
+    "open" => "Mở",
+	"close" => "ĐÓNG",
+	"crash" => "KHÔNG HOẠT ĐỘNG",
 ];

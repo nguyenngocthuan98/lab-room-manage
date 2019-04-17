@@ -56,6 +56,7 @@ Route::middleware(['guest', 'locale'])->group(function () {
 	| Routes Tag
 	|--------------------------------------------------------------------------
 	*/
+	
 	Route::resource('tags','TagsController');
 
 	/*
