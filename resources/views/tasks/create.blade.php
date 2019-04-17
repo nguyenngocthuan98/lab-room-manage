@@ -1,25 +1,22 @@
 @extends('master')
 
-@section('title', 'Task Manager')
+@section('title', trans('tasks/create.title'))
 
 @section('body')
-		<div class="container">
-			<div class="form-group">
-				<form action="{{ url('tags') }}" method="POST">
-					@csrf
-					<p>
-						<h3>
-							<center>{{ trans('tasks/langtask.name') }}</center>
-						</h3>
-					</p>
-					<br>
-					<label for="">{{ trans('tasks/langtask.value')}}:</label>
-					@if($errors->has('value'))
-						<div class="alert alert-danger">
-							{{ $errors->first('value') }}
-						</div>
-					@endif
-				</form>
-			</div>
+@include('partials/navigation_bar')
+	<div class="form-user container-fluid">
+		<div class="from-group">
+			
+			
+			<form action="{{ url('tasks') }}" method="POST">
+				@csrf
+				<label for="">{{ trans('users/create.name') }}</label>
+				<label class="alertdevice">{{ $errors->has('name') ? $errors->first('name') : ''}}</label>
+				<input type="text" class="form-control" placeholder="Enter Name" name="name">
+				
+				<button id="btn-form-user" type="submit" class="btn btn-primary">{{ trans('task/create.create') }}</button>
+			</form>
 		</div>
+	</div>	
+
 @endsection

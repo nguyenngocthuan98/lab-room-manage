@@ -19,7 +19,7 @@ class TaskController extends Controller
     public function index()
     {
         $itemperPage = 15;
-        $taskList = DB::table('tasks')->paginate($itemperPage);
+        $taskList = DB::table('tasks')->orderBy('id', 'DESC')->paginate($itemperPage);
         
         return view('tasks.index',['tasksList' => $taskList]);
     }
@@ -55,8 +55,8 @@ class TaskController extends Controller
     public function show($id)   
     {
         $tasks = Task::findOrFail($id);
-        // $tag = DB::table('tags')->where('id',$id)->first();
-        return view('tasks.show', ['task', $task]);
+        // $tasks = DB::table('tasks')->where('id',$id)->first();
+        return view('tasks.show', ['tasks', $tasks]);
     }
 
     /**
@@ -95,7 +95,6 @@ class TaskController extends Controller
     public function destroy($id)
     {
         Task::destroy($id);
-        // return redirect('tags')->with(['delete' => {{trans('tags/langTag.delSuccess')}} ]);
-         return redirect('tasks');
+        return redirect('tasks');
     }
 }
