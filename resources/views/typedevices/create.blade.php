@@ -1,10 +1,9 @@
 @extends('master')
 
-@section('title', trans('typedevices/create.title'))
+@section('title-bar', trans('typedevices/create.title'))
 
 @section('body')
 @include('partials/navigation_bar')
-@section('title-bar', 'TypeDevices')
 <div class="container-fluid">
 	<div class="from-group">
 		<form action="{{ url('typedevices') }}" method="post">

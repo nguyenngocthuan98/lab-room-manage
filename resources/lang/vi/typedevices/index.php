@@ -2,8 +2,8 @@
 	return [
 		'title' => 'Trang quản lý loại thiết bị',
 		'title-bar' => 'Loại thiết bị',
-		'STT' => 'STT',
-		'NAME' => 'Tên',
+		'stt' => 'STT',
+		'name' => 'Tên',
 		'option' => 'Tùy chọn',
 		
 	];
