@@ -6,6 +6,8 @@ use App\Models\Room;
 use App\Http\Requests\RoomRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Validator;
+use Auth;
 
 
 
@@ -19,9 +21,18 @@ class RoomController extends Controller
      */
     public function index( )
     {
-        $itemperPage=9;
-        $roomsList = DB::table('rooms')->paginate($itemperPage);
-        return view('rooms.index',['roomsList'=>$roomsList]);    
+        $filters = request()->only('action', 'key');
+
+        if($filters && $filters['action'] == 'search'){
+            //For search
+            $roomsList = DB::table('rooms')->where('name','like', '%'.$filters['key'].'%')
+                                        ->orderBy('id','ASC')->paginate(9);
+        }else{
+            $itemperPage=9;
+            $roomsList = DB::table('rooms')->paginate($itemperPage);
+        }
+        return view('rooms.index',['roomsList'=>$roomsList]); 
+          
     }
 
     /**
