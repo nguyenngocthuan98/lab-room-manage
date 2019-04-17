@@ -2,9 +2,11 @@
 
 @section('title', 'Room manage')
 
+
 @section('body')
     
-@section('title-bar', 'Room')
+{{-- @section('title', trans('rooms/langRooms.title')) --}}
+@section('title-bar', trans('rooms/langRooms.title'))
     <div class="container-fluid">
         {{-- add button --}}
         <a href="{{url('rooms/create')}}">
@@ -26,7 +28,7 @@
                         <div class="img-middle room">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <p><b>ID:
+                                        <p><b>ID:
                                         @php($i++)
                                         {{ RoomsHelper::increment($i , $roomsList->perPage(), $roomsList->currentPage()) }}</b>
                                     </p>
@@ -61,7 +63,7 @@
                         
                         <div class="col-lg-12 bgr room">
                             <p>
-                                <b>{{ trans('rooms/create.desc')}}:{{$rooms->desc}}</b>
+                                <b>{{ trans('rooms/langRooms.desc')}}:{{$rooms->desc}}</b>
                             </p>
                         </div>
                     </div>

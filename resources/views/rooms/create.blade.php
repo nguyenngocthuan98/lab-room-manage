@@ -18,19 +18,19 @@
 		            
 				<div class="form-rooms container-fluid">
 					<div class="form-group">
-					    <label for="" class="room">{{ trans('rooms/create.name')}}:</label>
+					    <label for="" class="room">{{ trans('rooms/langRooms.name')}}:</label>
 						<label class="alertroom" >{{ $errors-> has('name') ? $errors->first('name') :''}}</label>
 						<input type="text" class="form-control  {{ $errors-> has('name') ? 'errors' :''}}"  name="name" placeholder="Name">
 					</div>
 					
 
-					<label for="" class="room">{{ trans('rooms/create.desc')}}:</label>
+					<label for="" class="room">{{ trans('rooms/langRooms.desc')}}:</label>
 
 					<label class="alertroom" >{{ $errors-> has('desc') ? $errors->first('desc') :''}}</label>
 
 					<input type="text" class="form-control  {{ $errors-> has('desc') ? 'errors' :''}}" name="desc" placeholder="Desc"><br>
 
-					<label for="" class="room">{{ trans('rooms/create.status')}}:</label>
+					<label for="" class="room">{{ trans('rooms/langRooms.status')}}:</label>
 
 					<select name="status" class="form-control">
 
