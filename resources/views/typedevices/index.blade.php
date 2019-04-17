@@ -4,14 +4,21 @@
 	
 
 @section('body')
-
-@section('title-bar', 'TypeDevices')
+@section('title', trans('typedevices/index.title'))
+@section('title-bar',trans('typedevices/index.title-bar'))
 	
 
 	<div class="container-fluid">
 		<button id="add-new-user" class="btn btn-primary" type="button"><a href="{{ url('typedevices/create') }}">{{trans('+')}}</a></button>
+	<div class="search-user">
+		<form action="{{ url('typedevices') }}" method="GET">
+			<input type="hidden" name="action" value="search">
+			<input type="text" name="key" id="input" class="form-control" value="" placeholder="Search TypeDevice ...">
+		</form>
+		<i class="fa fa-search"></i>
 	</div>
-
+	
+	</div>	
 	<div class="container-fluid text-center">
 		<table class="list-user">
 			<thead>
