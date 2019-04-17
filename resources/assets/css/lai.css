@@ -48,14 +48,14 @@ table.list-computer thead tr {
     opacity: 1;
 }
 .col-lg-12.bgr.room {
-    width: 309px;
-    height: 231px;
-    background: #4f5b67a1;
-    position: absolute;
-    top: 28px;
-    left: 27px;
-    opacity: 0;
-    color: white;
+  width: 308px;
+  height: 201px;
+  background: #4f5b67a1;
+  position: absolute;
+  top: 58px;
+  left: 27px;
+  opacity: 0;
+  color: white;
 }
 
 .img-middle {

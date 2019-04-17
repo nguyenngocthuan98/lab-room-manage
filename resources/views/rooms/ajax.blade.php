@@ -26,19 +26,19 @@
 	    });
 	    function append_json(data){
             var table = document.getElementById('gable'); 
-            data.forEach(function(user) {
+            data.forEach(function(rooms) {
                 var tr = document.createElement('tr');
-                tr.innerHTML = '<td>' + user.name + '</td>' +
-                '<td>' + user.email + '</td>' +
-                '<td>' + user.username + '</td>' +
-                '<td>' + user.role + '</td>';
+                tr.innerHTML = '<td>' + rooms.name + '</td>' +
+                '<td>' + rooms.username + '</td>' +
+                '<td>' + rooms.desc + '</td>' +
+                '<td>' + rooms.Status + '</td>';
                 table.appendChild(tr);
             });
         }
 	});
 </script>
 <input type="text" name="name" id="name">
-<button id="search-user">Button</button>
+<button id="search-rooms">Button</button>
 <div id="content">
 	<table id="gable">
         <colgroup>

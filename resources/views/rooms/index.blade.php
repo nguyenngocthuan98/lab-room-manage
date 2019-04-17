@@ -4,13 +4,19 @@
 
 @section('body')
     
-@section('title-bar', trans('rooms/index.title')) 
+@section('title-bar', 'Room')
     <div class="container-fluid">
         {{-- add button --}}
         <a href="{{url('rooms/create')}}">
             <button id="add-new-user" class="btn btn-primary">+</button>
         </a>
-        
+        <div class="search-user">
+            <form action="{{ url('rooms') }}" method="GET">
+                <input type="hidden" name="action" value="search">
+                <input type="text" name="key" id="input" class="form-control" value="" placeholder="Search Rooms ...">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
         <div class="row">
             @php($i = 0)
             @foreach($roomsList as $rooms)
@@ -26,10 +32,10 @@
                                     </p>
                                 </div>
                                 <div class="col-xs-6">
-                                    <p><b>{{ RoomsHelper::getStatus($rooms->status)}}</b></p>
+                                    
                                 </div>
                                 <div class="col-xs-3">
-                                    <p><b>{{$rooms->desc}}</b></p>
+                                    <p><b>{{ RoomsHelper::getStatus($rooms->status)}}</b></p>
                                 </div>
                             </div>
                             {{-- image --}}
