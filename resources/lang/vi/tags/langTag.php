@@ -38,6 +38,6 @@ return [
     'confirmEdit' => 'Bạn có muốn thay đổi ',
     'confirmCreate' => 'Bạn có muốn tại xóa trị này không?',
     'notExist' => 'Không tồn tại !',
-    'addSuccess' => 'Thêm thành công !'
-    
+    'addSuccess' => 'Thêm thành công !',
+    'search' => 'Tìm kiếm Giá trị...'
 ];

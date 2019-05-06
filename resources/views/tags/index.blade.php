@@ -3,10 +3,18 @@
 @section('title', trans('tags/langTag.tagsmanager'))
 @section('title-bar', trans('tags/langTag.title'))
 @section('body')
+    <div class="top-list-user">
+        <a href="{{url('tags/create')}}">
+        <button id="addBtn" type="button" class="btn btn-primary">+</button></a>
+        <div class="search-user">
+            <form action="{{ url('tags') }}" method="GET">
+                <input type="hidden" name="action" value="search">
+                <input type="text" name="key" id="input" class="form-control" value="" placeholder=" {{ trans('tags/langTag.search') }}">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
 
-<a href="{{url('tags/create')}}">
-    <button id="addBtn" type="button" class="btn btn-primary">+</button></a>
-    <br>
     @if(session('add'))
     <div class="alert alert-success alert-dismissible notif-user">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

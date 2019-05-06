@@ -15,7 +15,11 @@
 				<label for="">{{trans('tags/langTag.value')}}:</label>
 				
 				<input type="text" class="form-control"  name="value" value="{{ $tags->value }}" required="required">
-
+					@if($errors->has('value'))
+						<div class="alert alert-danger">
+							{{ $errors->first('value') }}
+						</div>
+					@endif
 				<br>
 
 				<label for="devices_id">{{trans('tags/langTag.deviceName')}}:</label>
