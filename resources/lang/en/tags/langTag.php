@@ -38,5 +38,6 @@ return [
     'confirmEdit' => 'Are you want to change ',
     'confirmCreate' => 'Are you want to create this value?',
     'notExist' => 'This is not exist !',
-    'addSuccess' => 'Add Success !'
+    'addSuccess' => 'Add Success !',
+    'search' => 'Searching for Tags value...'
 ];

@@ -57,7 +57,14 @@ Route::middleware(['guest', 'locale'])->group(function () {
 	|--------------------------------------------------------------------------
 	*/
 	
-	Route::resource('tags','TagsController');
+	Route::get('tags', 'TagsController@index');
+	Route::get('tags/create', 'TagsController@create')->middleware('can:user.create');
+	Route::post('tags', 'TagsController@store');
+	Route::get('tags/{id}/edit', 'TagsController@edit')->middleware('can:user.update');
+	Route::put('tags/{id}', 'TagsController@update');
+	Route::get('tags/{id}', 'TagsController@show');
+	Route::delete('tags/{id}','TagsController@destroy')->middleware('can:user.delete');
+	Route::get('tags/search/{key}', 'TagsController@search'); 
 
 	/*
 	|--------------------------------------------------------------------------
@@ -73,12 +80,12 @@ Route::middleware(['guest', 'locale'])->group(function () {
 	*/
 
 	Route::get('devices', 'DeviceController@index');
-	Route::get('devices/create', 'DeviceController@create')->middleware('can:devices.create');
+	Route::get('devices/create', 'DeviceController@create')->middleware('can:user.create');
 	Route::post('devices', 'DeviceController@store');
-	Route::get('devices/{id}/edit', 'DeviceController@edit')->middleware('can:devices.update');
+	Route::get('devices/{id}/edit', 'DeviceController@edit')->middleware('can:user.update');
 	Route::put('devices/{id}', 'DeviceController@update');
 	Route::get('devices/{id}', 'DeviceController@show');
-	Route::delete('devices/{id}','DeviceController@destroy')->middleware('can:devices.delete');
+	Route::delete('devices/{id}','DeviceController@destroy')->middleware('can:user.delete');
 	Route::get('devices/search/{key}', 'DeviceController@search'); 
 
 	/*
