@@ -73,7 +73,7 @@
 			</div>
 			
 			<div class="form-group">
-				<button id="btn-form-user" type="submit" class="btn btn-success">{{ trans('users/edit.update') }}</button>
+				<button type="submit" class="btn btn-success btn-form-user">{{ trans('users/edit.update') }}</button>
 			</div>
 		</form>
 	</div>

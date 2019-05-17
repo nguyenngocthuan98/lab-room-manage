@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Computer;
 use App\Models\Room;
+use Faker\Generator as Faker;
+use App\Models\Device;
 
 class ComputerController extends Controller
 {
@@ -41,9 +43,34 @@ class ComputerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ComputerRequest $request)
+    public function store(ComputerRequest $request,Faker $faker)
     {
-        Computer::create($request->all());
+        // list device ...... 
+        // // tag
+        // cumputer;;;
+        
+        $computer = Computer::create($request->all());
+
+        $name_device = $request->get('name_device');
+        $desc_device = $request->get('desc_device');
+        $status_device = $request->get('status_device');
+        $tag_device = $request->get('tag_device');
+        $type_devices_id = $request->get('type_devices_id');
+
+        for ($i = 0; $i < count($name_device); $i++) {
+            $device = new Device();
+            $device->name = $name_device[$i];
+            $device->desc = $desc_device[$i];
+            $device->status = $status_device[$i];
+            $device->computers_id = $computer->id;
+            $device->type_devices_id = $type_devices_id[$i];
+            $device->date_of_use = $faker->dateTime( $max = 'now',$timezone = null );
+            $device->maintenance = $faker->dateTime( $max = 'now',$timezone = null );
+            $device->save();
+        }
+        
+        // dd($device->all());
+        // dd($request->all());
         return redirect('computers');
     }
 
@@ -95,5 +122,9 @@ class ComputerController extends Controller
     {
         Computer::destroy($id);
         return redirect('computers');
+    }
+
+    public function getCreateDevice(){
+        
     }
 }

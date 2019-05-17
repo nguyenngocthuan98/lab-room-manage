@@ -1,16 +1,12 @@
 @extends('master')
 
 @section('title', 'Computers')
+@section('title-bar', trans('computer/index.title'))
 
 @section('body')	
     
-    
-
     <div class="container-fluid text-center">
-        <h1>{{ trans('computer/index.title')}}</h1>
-    <div>
-        <button id="add-new-computer" ><a href="{{url('computers/create')}}">{{ trans('computer/index.add')}}</a></button>
-    </div>
+        <a id="add-new-computer" href="{{url('computers/create')}}" class="btn btn-success btn-form-user">{{ trans('computer/index.add')}}</a>
         <div class="row">
             @php($i = 0)
             @foreach($computerList as $computer)
@@ -48,7 +44,7 @@
                                 </div>
                             </div>
                             {{-- image --}}
-                            <img src="..\..\assets\img\desktop.jpg" style="width: 280px;" alt="placeholder+image">
+                            <img src="{{ asset('assets/img/desktop.jpg') }}" style="width: 280px;" alt="placeholder+image">
                             {{-- button --}}
                             <div class="text-center"><b>{{ trans('computer/index.name')}}:{{ $computer->name }}</b></div>
                             <div class="row btn-computer">
@@ -66,8 +62,6 @@
                                     </form>
                                 </div>
                             </div>
-
-                            <img src="..\..\assets\img\desktop.jpg" style="width: 280px;" alt="placeholder+image">
 
                         </div>
                         <div class="col-lg-12 bgr">
@@ -96,6 +90,5 @@
             {{ $computerList->links() }}
         </div>
     </div>
-   
     
 @endsection

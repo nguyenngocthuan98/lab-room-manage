@@ -1,3 +1,57 @@
+form#form-add-device .modal-footer {
+    border: none;
+    display: inline-block;
+    margin-left: 372px;
+}
+form#form-add-device label.fail-validated,form#form-add-device label.fail-validated-1 {
+    display: block;
+    color: #e21d1d;
+    font-weight: bold;
+}
+
+.append-device h6 {
+    border-bottom: 1px solid #c3c3c3;
+    padding-bottom: 7px;
+}
+
+.append-right button {
+    display: block;
+    width: 90px;
+    margin: 7px 4px;
+}
+
+.append-device .append-right {
+    float: right;
+    display: block;
+    margin: 25px;
+}
+.append-left span {
+    display: flow-root;
+    width: 274px;
+    padding: 3px 0px;
+    font-weight: bold;
+}
+
+.append-left input {
+    float: right;
+    border: none;
+    background: none;
+    font-weight: 500;
+}
+
+.append-device .append-left {
+    float: left;
+    display: inline-block;
+}
+
+.append-device {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    height: 210px;
+    background: #c0d5ea;
+}
 .has-error{
 	border-color: red;
 }
