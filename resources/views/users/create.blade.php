@@ -64,7 +64,7 @@
 				</div>
 			@endif
 			<div class="form-group">
-				<button id="btn-form-user" type="submit" class="btn btn-primary">{{ trans('users/create.create') }}</button>
+				<button type="submit" class="btn btn-primary btn-form-user">{{ trans('users/create.create') }}</button>
 			</div>
 		</form>		
 	</div>

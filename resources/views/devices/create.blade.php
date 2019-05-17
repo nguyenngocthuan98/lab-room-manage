@@ -72,7 +72,7 @@
 			var idx = selectObj.selectedIndex; 
 			// get the value of the selected option 
 			var roomId = selectObj.options[idx].value; 
-			console.log(roomId);
+			// console.log(roomId);
 
 			selectList = document.getElementById("computers_id");
 			for (var i = 0; i < computerList.length; i++) {

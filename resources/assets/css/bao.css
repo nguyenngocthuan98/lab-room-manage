@@ -210,7 +210,13 @@ button#add-new-user:hover {
   transform: translateY(-7px);
 }
 
-.btn-form-user, button#btn-form-user{
+.btn-form-user:hover {
+    background-color: #33495f;
+    opacity: 0.7;
+    color: white;
+}
+
+.btn-form-user{
   font-weight: 500;
   color: #e0e0e0;
   background-color: #263544;

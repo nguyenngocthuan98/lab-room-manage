@@ -1,10 +1,10 @@
 <?php 
 return[
-	'title' => 'Add New Computer',
-	'name' => 'NAME',
-	'desc' => 'DESC',
-	'status' => 'STATUS',
-	'roomsID' => 'ROOMS ID',
-	'submit' => 'Add New'
-]
+	'title' => 'Thêm máy tính',
+	'name' => 'Tên',
+	'desc' => 'Miêu tả',
+	'status' => 'Trạng thái',
+	'roomsID' => 'ID phòng',
+	'submit' => 'Thêm'
+];
  ?>

@@ -78,7 +78,7 @@ Route::middleware(['guest', 'locale'])->group(function () {
 	|--------------------------------------------------------------------------
 	*/
 	Route::resource('computers','ComputerController');
-
+	Route::get('computers/create_device','ComputerController@getCreateDevice');
 	/*
 	|--------------------------------------------------------------------------
 	| Routes Type Device
@@ -94,17 +94,3 @@ Route::middleware(['guest', 'locale'])->group(function () {
 	Route::resource('tasks','TaskController');
 	
 });
-
-
-// Route::get('ajax', function(){
-// 	return view('users.ajax');
-// });
-
-// Route::get('search/{name}', 'UserController@search');
-// Route::get('search', 'SearchController@getSearch');
-// Route::post('search/name', 'SearchController@getSearchAjax')->name('search');
-
-
-// Auth::routes();
-
-

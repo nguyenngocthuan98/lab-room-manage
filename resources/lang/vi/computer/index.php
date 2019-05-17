@@ -1,13 +1,13 @@
 <?php 
 return[
-	'title' => 'Computers',
-	'add' => 'Add New Computer',
+	'title' => 'Máy tính',
+	'add' => 'Thêm máy tính',
 	'stt' => 'STT',
-	'name' => 'NAME',
-	'desc' => 'DESC',
-	'status' => 'STATUS',
-	'roomsID' => 'ROOMS ID',
-	'edit' => 'Edit',
-	'delete' => 'Delete'
-]
+	'name' => 'Tên máy',
+	'desc' => 'Miêu tả',
+	'status' => 'Trạng thái',
+	'roomsID' => 'ID Phòng',
+	'edit' => 'Sửa',
+	'delete' => 'Xóa'
+];
  ?>

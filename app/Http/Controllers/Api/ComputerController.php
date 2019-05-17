@@ -30,7 +30,6 @@ class ComputerController extends BaseController
     {
         // $computer = Computer::create($request->all());
         // return api_success(['data' => $computer],200);
-        
         return $this->repository->store($request);
     }
     public function update(ComputerUpdateRequest $request, $id)

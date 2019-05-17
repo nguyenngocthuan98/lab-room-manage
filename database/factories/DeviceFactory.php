@@ -20,8 +20,8 @@ $factory->define(App\Models\Device::class, function (Faker $faker) {
     $names = array('CPU','RAM','HDD','Mainboard','Mouse','Monitor');
 
     $status = array(DeviceStatus::WORKING, 
-        DeviceStatus::PREPARING, 
-        DeviceStatus::CRASH);
+                    DeviceStatus::PREPARING, 
+                    DeviceStatus::CRASH);
 
     $idsc = App\Models\Computer::pluck('id')->toArray();
     $idst = App\Models\TypeDevice::pluck('id')->toArray();
