@@ -40,8 +40,7 @@
 						<option value="{{ $computer->id }}"> {{ $computer->name }} </option>
 					@endforeach
 				</select>
-
-				<button id="btn-form-user" type="submit" class="btn btn-default cre">{{ trans('devices/edit.edit') }}</button>
+				<button type="submit" class="btn btn-primary btn-form-user cre">{{ trans('devices/edit.edit') }}</button>
 			</form>
 		</div>
 	</div>

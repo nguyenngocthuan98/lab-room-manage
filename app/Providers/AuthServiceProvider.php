@@ -20,9 +20,14 @@ class AuthServiceProvider extends ServiceProvider
         User::class => UserPolicy::class,
         
         Device::class => DevicePolicy::class,
+
         Tag::class => TagPolicy::class,
 
-
+        Room::class => RoomPolicy::class,
+        
+        Computer::class => ComputerPolicy::class,
+        
+        TypeDevice::class => TypeDevicePolicy::class,
     ];
 
     /**
@@ -40,5 +45,10 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::resource('tag', TagPolicy::class);
 
+        Gate::resource('computer', ComputerPolicy::class);
+
+        Gate::resource('room', RoomPolicy::class);
+
+        Gate::resource('typedevice', TypeDevicePolicy::class);
     }
 }

@@ -5,7 +5,9 @@ return [
     'name' => 'Name',
     'desc' => 'Description',
     'status' => 'Status',
-    "open" => "OPEN",
-    "close" => "CLOSE",
-    "crash" => "CRASH",
+    "open" => "Open",
+    "close" => "Close",
+    "crash" => "Crash",
+    "edit" => "Edit",
+    "delete" => "Delete"
 ];

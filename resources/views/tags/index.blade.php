@@ -4,8 +4,7 @@
 @section('title-bar', trans('tags/langTag.title'))
 @section('body')
     <div class="top-list-user">
-        <a href="{{url('tags/create')}}">
-        <button id="addBtn" type="button" class="btn btn-primary">+</button></a>
+        <button id="add-new-user" type="button" class="btn btn-primary"><a href="{{url('tags/create')}}">+</a></button>
         <div class="search-user">
             <form action="{{ url('tags') }}" method="GET">
                 <input type="hidden" name="action" value="search">

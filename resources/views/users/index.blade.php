@@ -4,9 +4,8 @@
 @section('title-bar', trans('users/index.title-bar'))
 @section('body')
 	<div class="top-list-user">
-		<a href="{{ url('users/create') }}">
-			<button id="add-new-user" type="button" class="btn btn-primary">+</button>
-		</a>
+		<button id="add-new-user" type="button" class="btn btn-primary"><a href="{{ url('users/create') }}">+</a></button>
+		
 		<div class="search-user">
 			<form action="{{ url('users') }}" method="GET">
 				<input type="hidden" name="action" value="search">

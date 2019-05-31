@@ -12,13 +12,13 @@
   .search-user {
     position: relative;
     margin: 10px 13px!important;
-  }
-
+  } 
 }
 
 a.a_lang {
     margin: 14px 9px!important;
     padding: 1px 1px!important;
+    text-align: center;
 }
 
 img.icon-lang {
@@ -184,6 +184,12 @@ table.list-user {
     margin-left: 20px;
     display: table;
     background-color: #f2f7fb;
+}
+
+button#add-new-user>a {
+    padding: 10px 14px;
+    margin-left: -14px;
+    color: white;
 }
 
 button#add-new-user {

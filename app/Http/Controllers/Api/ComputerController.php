@@ -20,10 +20,8 @@ class ComputerController extends BaseController
     }
     public function index()
     {
-        
         //  $computerList = DB::table('computers')->orderby('id','ASC')->get();
         // return api_success(['data' => $computerList],"");
-        
         return $this->repository->all();
     }
     public function store(ComputerStoreRequest $request)
@@ -48,4 +46,9 @@ class ComputerController extends BaseController
         return $this->repository->destroy($id);
     }
 
+    public function show($id)
+    {
+        return $this->repository->show($id);
+        
+    }
 }

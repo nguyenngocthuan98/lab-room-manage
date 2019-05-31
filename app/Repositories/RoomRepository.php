@@ -33,6 +33,6 @@ class RoomRepository
     }
 
     public function show($id){
-        return new RoomResource(User::findOrFail($id));
+        return new RoomResource(Room::with('computers')->findOrFail($id));
     }
 }

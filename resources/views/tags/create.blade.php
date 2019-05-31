@@ -38,10 +38,10 @@
 					@endif
 
 					<br>
-
-					<button id="btn-form-user" class="btn btn-primary" type="sumbit" >{{trans('tags/langTag.submit')}}</button>
-						{{-- <button id="submit" class="btn btn-success" type="sumbit" onclick="return confirm('{{trans('tags/langTag.confirmCreate')}}'); ">{{trans('tags/langTag.submit')}}</button> --}}
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-form-user">{{trans('tags/langTag.submit')}}</button>
+					</div>
+						
 				</form>
 			</div>
-{{-- 		</div> --}}
 @endsection

@@ -20,8 +20,6 @@ class DeviceResource extends Resource
             'status' => $this->status,
             'computers_id' =>$this->computers_id,
             'type_devices_id' => $this->type_devices_id,
-            
-
-            ];
+        ];
     }
 }

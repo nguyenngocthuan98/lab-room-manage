@@ -49,7 +49,7 @@
 	<div class="container-fluid">
 		<button type="button" class="btn btn-primary btn-form-user" data-toggle="modal" data-target="#myModal">+ Device </button>
 		<div class="modal fade" id="myModal" role="dialog">
-		    <div class="modal-dialog">
+		    <div class="modal-dialog add-dev-for-com">
 		      <!-- Modal content-->
 		      <div class="modal-content">
 		        <div class="modal-header">
@@ -104,7 +104,7 @@
 								<label>Status:</label>
 								<select name="statusDevice" class="form-control">
 									<option value="{{ \App\Enums\DeviceStatus::WORKING }}"> {{ @trans('devices/status.working') }}</option>
-									<option value="{{ \App\Enums\DeviceStatus::PREPARING }}"> {{ @trans('devices/status.preparing') }}</option>
+									<option value="{{ \App\Enums\DeviceStatus::REPAIRING }}"> {{ @trans('devices/status.repairing') }}</option>
 									<option value="{{ \App\Enums\DeviceStatus::CRASH }}"> {{ @trans('devices/status.crash') }}</option>
 								</select>
 								<button  id="btn-create-device" type="button"  class="btn btn-default btn-form-user">Add</button>

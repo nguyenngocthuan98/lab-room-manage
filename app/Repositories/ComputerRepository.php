@@ -13,7 +13,7 @@ class ComputerRepository
      * @return Collection
      */
     public function all(){
-        return ComputerResource::collection(Computer::with(['devices','type_devices'])->orderBy('id','DESC')->get());
+        return ComputerResource::collection(Computer::orderBy('id','DESC')->get());
     }
 
     public function store($request){
@@ -33,6 +33,6 @@ class ComputerRepository
     }
 
     public function show($id){
-    	return new ComputerResource(Computer::findOrFail($id));
+    	return new ComputerResource(Computer::with(['devices', 'room'])->findOrFail($id));
     }
 }

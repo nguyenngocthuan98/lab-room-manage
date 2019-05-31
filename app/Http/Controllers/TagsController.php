@@ -16,9 +16,15 @@ class TagsController extends Controller
      */
     public function index()
     {
-        $itemperPage = 15;
-        $tagsList = DB::table('tags')->paginate($itemperPage);
-        return view('tags.index',['tagsList'=>$tagsList]);
+        $filters = request()->only('action', 'key');
+        if ($filters && $filters['action']  == 'search') {
+            $tagsList = DB::table('tags')->where('value', 'like', '%'.$filters['key'].'%')->orderBy('id','ASC')->paginate(15);
+        }
+        else{
+            $itemperPage = 15;
+            $tagsList = DB::table('tags')->paginate($itemperPage);
+        }
+        return view('tags.index',['tagsList' => $tagsList]);
     }
     /**
      * Show the form for creating a new resource.
@@ -100,13 +106,7 @@ class TagsController extends Controller
     public function destroy($id)
     {
         Tag::destroy($id);
-        // return redirect('tags')->with(['delete' => {{trans('tags/langTag.delSuccess')}} ]);
         return redirect('tags')->with(['delete' => trans('tags/langTag.delSuccess')]);
     }
 
-        public function search($value){
-        $value = "$value%";
-        $rs = Tag::where('value', 'like', $value)->get();
-        return $rs;
-    }
 }

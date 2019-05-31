@@ -60,7 +60,7 @@
 						<option value="{{$key}}">{{$value}}</option>
 					@endforeach
 				</select>
-				<button  id="btn-form-user" type="submit" class="btn btn-default cre">{{ trans('devices/create.add') }}</button>
+				<button type="submit" class="btn btn-primary btn-form-user cre">{{ trans('devices/create.add') }}</button>
 			</form>
 		</div>
 	</div>	
@@ -84,7 +84,6 @@
 				}			    
 			}
 		}
-
 		function addTags(){
 			$('#tagsDom').append('<label class=tag name=tags[] value=' + $('#tags').val() + '>' + $('#tags option:selected').text() +'</label><br/>');
 		}

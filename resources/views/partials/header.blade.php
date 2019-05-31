@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('css/light-bootstrap-dashboard.css') }}" rel="stylesheet"/> {{-- ?v=1.4.0 --}}
+    <link href="{{ asset('css/light-bootstrap-dashboard.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/demo.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/all.css') }}">
 
@@ -21,5 +21,5 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
     <link href="{{ asset('css/pe-icon-7-stroke.css') }}" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript" src="{{ asset('js/template/custom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/template/custom.js') }}"></script>
 </head>

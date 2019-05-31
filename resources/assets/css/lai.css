@@ -63,7 +63,7 @@ table.list-computer thead tr {
     margin:5px;
     padding: 10px;
     background: #FFFFFF;
-    border: 2px solid;
+    border: 1px solid #c1c1c1;
     border-radius: 5px;
     box-shadow: 5px 8px #c1bdbd;
 }

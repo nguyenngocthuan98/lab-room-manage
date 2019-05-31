@@ -4,19 +4,18 @@
 	 
 @section('body')
 @section('title-bar',trans('devices/index.title'))
-	<a href="{{ url('devices/create') }}">
-		<button id="add-new-device" type="button" class="btn btn-primary">+</button>
-	</a>
-	<div class="search-user">
-		<form action="{{ url('users') }}" method="GET">
-			<input type="hidden" name="action" value="search">
-			<input type="text" name="key" id="input" class="form-control" value="" placeholder="{{ trans('devices/index.seach') }}">
-			<button type="submit"><i class="fa fa-search"></i></button>
-		</form>
+	<div class="top-list-user">
+		<button id="add-new-user" type="button" class="btn btn-primary"><a href="{{ url('devices/create') }}">+</a></button>
+		<div class="search-user">
+			<form action="{{ url('devices') }}" method="GET">
+				<input type="hidden" name="action" value="search">
+				<input type="text" name="key" id="input" class="form-control" value="" placeholder="{{ trans('devices/index.seach') }}">
+				<button type="submit"><i class="fa fa-search"></i></button>
+			</form>
+		</div>
 	</div>
-	
 	<div class="container-fluid text-center">
-		<table class="table h">
+		<table class="table h list-device">
 			<thead>
 				<tr>
 					<th>{{ trans('devices/index.stt') }}</th>
