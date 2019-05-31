@@ -19,9 +19,15 @@ class ComputerController extends Controller
      */
     public function index()
     {
-        $itemperPage=12;
-        $computerList = DB::table('computers')->orderBy('id','DESC')->paginate($itemperPage);
-        // $computerList = DB::table('computers')->orderby('id','DESC')->get();
+        $filters = request()->only('action', 'key');
+        if($filters && $filters['action'] == 'search'){
+            $computerList = DB::table('computers')->where('name', 'like', '%'.$filters['key'].'%')
+                                        ->orderBy('id','ASC')->paginate(10);
+        }else{
+            $itemperPage = 12;
+            $computerList = DB::table('computers')->orderBy('id','DESC')->paginate($itemperPage);
+        }   
+        
         return view('computers.index',['computerList' => $computerList]);
     }
 

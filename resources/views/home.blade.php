@@ -11,21 +11,21 @@
                     <div class="card">
 
                         <div class="header">
-                            <h4 class="title">Email Statistics</h4>
-                            <p class="category">Last Campaign Performance</p>
+                            <h4 class="title">{{ trans('home.col_4_title_header') }}</h4>
+                            <p class="category">{{ trans('home.col_4_category') }}</p>
                         </div>
                         <div class="content">
                             <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
 
                             <div class="footer">
                                 <div class="legend">
-                                    <i class="fa fa-circle text-info"></i> Open
-                                    <i class="fa fa-circle text-danger"></i> Bounce
-                                    <i class="fa fa-circle text-warning"></i> Unsubscribe
+                                    <i class="fa fa-circle text-info"></i> {{ trans('home.col_4_legend_1') }}
+                                    <i class="fa fa-circle text-danger"></i> {{ trans('home.col_4_legend_2') }}
+                                    <i class="fa fa-circle text-warning"></i> {{ trans('home.col_4_legend_3') }}
                                 </div>
                                 <hr>
                                 <div class="stats">
-                                    <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
+                                    <i class="fa fa-clock-o"></i> {{ trans('home.col_4_stats') }}
                                 </div>
                             </div>
                         </div>
@@ -35,20 +35,20 @@
                 <div class="col-md-8">
                     <div class="card">
                         <div class="header">
-                            <h4 class="title">Users Behavior</h4>
-                            <p class="category">24 Hours performance</p>
+                            <h4 class="title">{{ trans('home.col_8_title_header') }}</h4>
+                            <p class="category">{{ trans('home.col_8_category') }}</p>
                         </div>
                         <div class="content">
                             <div id="chartHours" class="ct-chart"></div>
                             <div class="footer">
                                 <div class="legend">
-                                    <i class="fa fa-circle text-info"></i> Open
-                                    <i class="fa fa-circle text-danger"></i> Click
-                                    <i class="fa fa-circle text-warning"></i> Click Second Time
+                                    <i class="fa fa-circle text-info"></i>{{ trans('home.col_8_legend_1') }}
+                                    <i class="fa fa-circle text-danger"></i> {{ trans('home.col_8_legend_2') }}
+                                    <i class="fa fa-circle text-warning"></i> {{ trans('home.col_8_legend_3') }}
                                 </div>
                                 <hr>
                                 <div class="stats">
-                                    <i class="fa fa-history"></i> Updated 3 minutes ago
+                                    <i class="fa fa-history"></i> {{ trans('home.col_8_stats') }}
                                 </div>
                             </div>
                         </div>
@@ -62,20 +62,20 @@
                 <div class="col-md-6">
                     <div class="card ">
                         <div class="header">
-                            <h4 class="title">2014 Sales</h4>
-                            <p class="category">All products including Taxes</p>
+                            <h4 class="title">{{ trans('home.col_6_title_header') }}</h4>
+                            <p class="category">{{ trans('home.col_6_category') }}</p>
                         </div>
                         <div class="content">
                             <div id="chartActivity" class="ct-chart"></div>
 
                             <div class="footer">
                                 <div class="legend">
-                                    <i class="fa fa-circle text-info"></i> Tesla Model S
-                                    <i class="fa fa-circle text-danger"></i> BMW 5 Series
+                                    <i class="fa fa-circle text-info"></i> {{ trans('home.col_6_legend_1') }}
+                                    <i class="fa fa-circle text-danger"></i> {{ trans('home.col_6_legend_2') }}
                                 </div>
                                 <hr>
                                 <div class="stats">
-                                    <i class="fa fa-check"></i> Data information certified
+                                    <i class="fa fa-check"></i> {{ trans('home.col_6_stats') }}
                                 </div>
                             </div>
                         </div>
@@ -239,7 +239,7 @@
                 </ul>
             </nav>
             <p class="copyright pull-right">
-                &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative 17CDTH31</a>, made with love for a better web
             </p>
         </div>
     </footer>

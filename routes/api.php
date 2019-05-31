@@ -43,15 +43,16 @@ Route::group(['namespace' => 'Api'], function () {
     Route::get('typedevices/{id}', 'TypeDeviceController@show');
     Route::put('typedevices/{id}', 'TypeDeviceController@update');
     Route::delete('typedevices/{id}', 'TypeDeviceController@destroy');
-});
-Route::group(['namespace' => 'Api'], function () {
+
     Route::get('rooms', 'RoomController@index');
     Route::post('rooms', 'RoomController@store');
+    Route::get('rooms/{id}', 'RoomController@show');
     Route::put('rooms/{id}', 'RoomController@update');
     Route::delete('rooms/{id}', 'RoomController@destroy');
 
     Route::get('computers', 'ComputerController@index');
     Route::post('computers', 'ComputerController@store');
+    Route::get('computers/{id}','ComputerController@show');
     Route::put('computers/{id}', 'ComputerController@update');
     Route::delete('computers/{id}', 'ComputerController@destroy');
 });

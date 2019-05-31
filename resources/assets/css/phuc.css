@@ -1,4 +1,16 @@
+table.list-device>thead>tr th {
+    color: white;
+}
 
+table.list-device thead tr {
+    background: #50677d;
+    height: 50px;
+}
+table.list-device tbody tr:hover {
+    color: white;
+    background: #7d8c9a!important;
+    transition: all 0.4s;
+}
 .container-fluid.vip {
     width: 700px;
 }

@@ -1,6 +1,6 @@
 <?php 
 return[
-	'title' => 'Máy tính',
+	'title' => 'Danh sách máy tính',
 	'add' => 'Thêm máy tính',
 	'stt' => 'STT',
 	'name' => 'Tên máy',

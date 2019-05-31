@@ -18,9 +18,11 @@ use Faker\Generator as Faker;
 $factory->define(App\Models\Room::class, function (Faker $faker) {
 	$names = array('Phòng X1.401','Phòng X2.402','Phòng X2.403','Phòng D2.405','Phòng D2.503','Phòng D2.504');
 	shuffle($names);
+	$status = array('0','1','2');
+	shuffle($status);
     return [
         'name' => $names[0],
         'desc' => $faker->randomDigitNotNull,
-        'status' => $faker->randomLetter,
+        'status' => $status[0],
     ];
 });

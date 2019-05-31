@@ -13,4 +13,8 @@ class Computer extends Model
     public function devices(){
     	return $this->hasMany('App\Models\Device', 'computers_id');
     }
+
+    public function room(){
+    	return $this->belongsTo('App\Models\Room', 'rooms_id', 'id');
+    }
 }

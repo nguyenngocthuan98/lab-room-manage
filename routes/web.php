@@ -72,7 +72,15 @@ Route::middleware(['guest', 'locale'])->group(function () {
 	|--------------------------------------------------------------------------
 	*/
 	Route::resource('rooms', 'RoomController');
-
+	
+	Route::get('rooms', 'RoomController@index');
+	Route::get('rooms/create', 'RoomController@create')->middleware('can:user.create');
+	Route::post('rooms', 'RoomController@store');
+	Route::get('rooms/{id}/edit', 'RoomController@edit')->middleware('can:user.update');
+	Route::put('rooms/{id}', 'RoomController@update');
+	Route::get('rooms/{id}', 'RoomController@show');
+	Route::delete('rooms/{id}','RoomController@destroy')->middleware('can:user.delete');
+	Route::get('rooms/search/{key}', 'RoomController@search'); 
 	/*
 	|--------------------------------------------------------------------------
 	| Routes Device
@@ -93,15 +101,28 @@ Route::middleware(['guest', 'locale'])->group(function () {
 	| Routes Computer
 	|--------------------------------------------------------------------------
 	*/
-	Route::resource('computers','ComputerController');
+	Route::get('computers', 'ComputerController@index');
+	Route::get('computers/create', 'ComputerController@create')->middleware('can:user.create');
+	Route::post('computers', 'ComputerController@store');
+	Route::get('computers/{id}/edit', 'ComputerController@edit')->middleware('can:user.update');
+	Route::put('computers/{id}', 'ComputerController@update');
+	Route::get('computers/{id}', 'ComputerController@show');
+	Route::delete('computers/{id}','ComputerController@destroy')->middleware('can:user.delete');
+	Route::get('computers/search/{key}', 'ComputerController@search');
 	Route::get('computers/create_device','ComputerController@getCreateDevice');
 	/*
 	|--------------------------------------------------------------------------
 	| Routes Type Device
 	|--------------------------------------------------------------------------
 	*/
-	Route::resource('typedevices','TypeDeviceController');
-	
+	Route::get('typedevices', 'TypeDeviceController@index');
+	Route::get('typedevices/create', 'TypeDeviceController@create')->middleware('can:user.create');
+	Route::post('typedevices', 'TypeDeviceController@store');
+	Route::get('typedevices/{id}/edit', 'TypeDeviceController@edit')->middleware('can:user.update');
+	Route::put('typedevices/{id}', 'TypeDeviceController@update');
+	Route::get('typedevices/{id}', 'TypeDeviceController@show');
+	Route::delete('typedevices/{id}','TypeDeviceController@destroy')->middleware('can:user.delete');
+	Route::get('typedevices/search/{key}', 'TypeDeviceController@search'); 
 	/*
 	|--------------------------------------------------------------------------
 	| Routes Task

@@ -22,9 +22,14 @@ class DeviceController extends Controller
      */
     public function index()
     {
-        $itemPerPage = 20;
-        $devicesList = Device::with(['computer','typeDevice'])->paginate($itemPerPage);
-        // $devicesList = DB::table('devices')->orderBy('id','DESC')->get();
+        $filters = request()->only('action', 'key');
+
+        if($filters && $filters['action'] == 'search'){
+            $devicesList = Device::with(['computer','typeDevice'])->where('name', 'like', '%'.$filters['key'].'%')->orderBy('id','ASC')->paginate(20);
+        }else{
+            $itemPerPage = 20;
+            $devicesList = Device::with(['computer','typeDevice'])->paginate($itemPerPage);
+        }        
         return view('devices.index',['devicesList'=> $devicesList]); 
     }
  

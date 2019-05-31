@@ -19,6 +19,8 @@ class ComputerResource extends Resource
     		'desc' => $this->desc,
     		'status' => $this->status,
             'rooms_id' => $this->rooms_id,
+            'devices' => $this->devices,
+            'room' => $this->room,
     	];
     }
 }

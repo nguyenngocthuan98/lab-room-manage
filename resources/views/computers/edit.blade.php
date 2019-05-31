@@ -34,7 +34,7 @@
 				@endforeach
 			</select>
 
-			<button class="btn btn-danger" id="btn-form-user" type="submit">{{ trans('computer/edit.submit')}}</button>
+			<button class="btn btn-danger btn-form-user" type="submit">{{ trans('computer/edit.submit')}}</button>
 			</form>
 		</div>
 	</div>

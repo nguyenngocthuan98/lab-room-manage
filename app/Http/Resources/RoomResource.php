@@ -15,10 +15,12 @@ class RoomResource extends Resource
     public function toArray($request){
         return [
             'id' => $this->id,
+            'name' => $this->name,
             'desc' => $this->desc,
             'status' => $this->status,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'computers' => $this->computers,
         ];
     }
 }

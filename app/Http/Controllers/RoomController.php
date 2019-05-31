@@ -28,10 +28,10 @@ class RoomController extends Controller
             $roomsList = DB::table('rooms')->where('name','like', '%'.$filters['key'].'%')
                                         ->orderBy('id','ASC')->paginate(9);
         }else{
-            $itemperPage=9;
+            $itemperPage = 9;
             $roomsList = DB::table('rooms')->paginate($itemperPage);
         }
-        return view('rooms.index',['roomsList'=>$roomsList]); 
+        return view('rooms.index',['roomsList' => $roomsList]); 
           
     }
 
