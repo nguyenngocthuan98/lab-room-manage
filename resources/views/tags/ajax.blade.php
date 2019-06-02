@@ -13,8 +13,8 @@
 	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	        }
 	    });
-	    $('#search-user').click(function() {
-	    	var name = $('#name').val();
+	    $('#search-tag').click(function() {
+	    	var name = $('#value').val();
 	        $.ajax({
 	            type: 'GET',
 	            url: '/search/' + name,
@@ -24,17 +24,6 @@
 	            }
 	        });
 	    });
-	    function append_json(data){
-            var table = document.getElementById('gable'); 
-            data.forEach(function(user) {
-                var tr = document.createElement('tr');
-                tr.innerHTML = '<td>' + user.name + '</td>' +
-                '<td>' + user.email + '</td>' +
-                '<td>' + user.username + '</td>' +
-                '<td>' + user.role + '</td>';
-                table.appendChild(tr);
-            });
-        }
 	});
 </script>
 <input type="text" name="name" id="name">

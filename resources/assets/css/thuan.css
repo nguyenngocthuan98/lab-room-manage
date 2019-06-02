@@ -22,7 +22,7 @@ button#addBtn:hover {
     color: white;
     transform: rotate(45deg);
     transform: translateY(-7px);
-    border-radius: 10px;
-    width: 70px;
+    border-radius: 45px;
+    width: 45px;
     height: 45px;
 }

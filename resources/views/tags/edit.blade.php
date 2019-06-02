@@ -30,8 +30,10 @@
 				</select>
 				<br>
 					<div class="form-group">
-						<button type="submit" class="btn btn-success btn-form-user">{{trans('tags/langTag.submit')}}</button>
-					</div>
+
+					<button id="btn-form-user" class="btn btn-success btn-form-user" type="sumbit" >{{trans('tags/langTag.submit')}}</button>
+					{{-- <button id="submit" class="btn btn-success" type="sumbit" onclick="return confirm('{{trans('tags/langTag.confirmEdit')}}{{ $tags->value }}'); ">{{trans('tags/langTag.submit')}}</button> --}}
+				</div>
 				</form>
 			</div>
 	</div>

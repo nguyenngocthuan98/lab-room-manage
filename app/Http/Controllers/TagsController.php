@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Tag;
 use Validator;
+use Auth;
 
 class TagsController extends Controller
 {
@@ -16,6 +17,7 @@ class TagsController extends Controller
      */
     public function index()
     {
+
         $filters = request()->only('action', 'key');
         if ($filters && $filters['action']  == 'search') {
             $tagsList = DB::table('tags')->where('value', 'like', '%'.$filters['key'].'%')->orderBy('id','ASC')->paginate(15);
@@ -25,6 +27,7 @@ class TagsController extends Controller
             $tagsList = DB::table('tags')->paginate($itemperPage);
         }
         return view('tags.index',['tagsList' => $tagsList]);
+
     }
     /**
      * Show the form for creating a new resource.
@@ -110,3 +113,4 @@ class TagsController extends Controller
     }
 
 }
+
