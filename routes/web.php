@@ -29,6 +29,10 @@ Route::post('login', 'Auth\AuthController@postLogin');
 
 Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
 
+//Socical Account Service
+Route::get('/redirect/{social}', 'SocialAuthController@redirect');
+Route::get('/callback/{social}', 'SocialAuthController@callback');
+
 Route::middleware(['guest', 'locale'])->group(function () {
 	/*
 	|--------------------------------------------------------------------------

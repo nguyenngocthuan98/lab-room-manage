@@ -45,7 +45,7 @@
       </div>
         
     </div><!-- tab-content -->
-      
+    <a href="redirect/facebook">FB Login</a> 
   </div> <!-- /form -->
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script  src="{{ asset('assets/folder_form_register_login/js/index.js') }}"></script>
