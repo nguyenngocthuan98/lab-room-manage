@@ -64,6 +64,12 @@
                                 </div>
                             </div>
                         </div>
+                         
+                        <div class="col-lg-12 bgr room">
+                            <p>
+                                <b>{{ trans('rooms/langRooms.desc')}}:{{$rooms->desc}}</b>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
