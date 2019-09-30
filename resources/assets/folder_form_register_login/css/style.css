@@ -1,181 +1,134 @@
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-.option-login p.forgot.register {
-    float: left;
-}
-
-.option-login p.forgot {
-    display: inline-block!important;
-}
-
-.option-login p.forgot-pass {
-    float: right;
-}
-
-html {
-  overflow-y: scroll;
-}
-
+@import url('https://fonts.googleapis.com/css?family=Numans');
+html,
 body {
-  background: #c1bdba;
-  font-family: 'Titillium Web', sans-serif;
+    background-image: url('http://matcitsupport.org/wp-content/uploads/2015/10/MATC.IT_.Computer.Support.Apple_.iMac_.iPad_.Lab_.02.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
 }
 
-a {
-  text-decoration: none;
-  color: #1ab188;
-  transition: .5s ease;
-}
-a:hover {
-  color: #179b77;
+.container {
+    height: 100%;
+    align-content: center;
 }
 
-.form {
-  background: rgba(19, 35, 47, 0.9);
-  padding: 40px;
-  max-width: 600px;
-  margin: 40px auto;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+.card {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-.tab-group {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
-}
-.tab-group:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.tab-group li a {
-  display: block;
-  text-decoration: none;
-  padding: 15px;
-  background: rgba(160, 179, 176, 0.25);
-  color: #a0b3b0;
-  font-size: 20px;
-  float: left;
-  width: 50%;
-  text-align: center;
-  cursor: pointer;
-  transition: .5s ease;
-}
-.tab-group li a:hover {
-  background: #179b77;
-  color: #ffffff;
-}
-.tab-group .active a {
-  background: #1ab188;
-  color: #ffffff;
+.card-header h3 {
+    color: white;
 }
 
-h1 {
-  text-align: center;
-  color: #ffffff;
-  font-weight: 300;
-  margin: 0 0 40px;
+.card-signup {
+    height: auto;
 }
 
-label {
-  position: absolute;
-  -webkit-transform: translateY(6px);
-          transform: translateY(6px);
-  left: 13px;
-  color: rgba(255, 255, 255, 0.5);
-  transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
-  pointer-events: none;
-  font-size: 22px;
-}
-label .req {
-  margin: 2px;
-  color: #1ab188;
+.signup-link>.card-signup {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
 }
 
-label.active {
-  -webkit-transform: translateY(50px);
-          transform: translateY(50px);
-  left: 2px;
-  font-size: 14px;
-}
-label.active .req {
-  opacity: 0;
+.card-signup {
+    display: none;
+    background: #000000e8;
+    position: fixed;
+    cursor: pointer;
 }
 
-label.highlight {
-  color: #ffffff;
+.card-signup {
+    display: none;
+    position: relative;
+    animation: card-signup 1s forwards;
 }
 
-input, textarea {
-  font-size: 22px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 5px 10px;
-  background: none;
-  background-image: none;
-  border: 1px solid #a0b3b0;
-  color: #ffffff;
-  border-radius: 0;
-  transition: border-color .25s ease, box-shadow .25s ease;
-}
-input:focus, textarea:focus {
-  outline: 0;
-  border-color: #1ab188;
+@keyframes card-signup {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
-textarea {
-  border: 2px solid #a0b3b0;
-  resize: vertical;
+.social_icon span {
+    font-size: 60px;
+    margin-left: 10px;
+    color: white;
 }
 
-.field-wrap {
-  position: relative;
-  margin-bottom: 40px;
+.social_icon span:hover {
+    cursor: pointer;
 }
 
-.top-row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.top-row > div {
-  float: left;
-  width: 48%;
-  margin-right: 4%;
-}
-.top-row > div:last-child {
-  margin: 0;
+.social_icon span.fb:hover {
+    color: #3578E5;
 }
 
-.button {
-  border: 0;
-  outline: none;
-  border-radius: 0;
-  padding: 15px 0;
-  font-size: 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  background: #1ab188;
-  color: #ffffff;
-  transition: all 0.5s ease;
-  -webkit-appearance: none;
-}
-.button:hover, .button:focus {
-  background: #179b77;
+.social_icon span.gg:hover {
+    color: #ff1e00;
 }
 
-.button-block {
-  display: block;
-  width: 100%;
+.social_icon span.git:hover {
+    color: #de5f35;
 }
 
-.forgot {
-  margin-top: -20px;
-  text-align: right;
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #263544;
+    color: white;
+    border: 0 !important;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+    border: 3px solid; 
+}
+
+.remember {
+    color: white;
+}
+
+.remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.btn_loginpage {
+    color: white;
+    background-color: #263544;
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 10px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+}
+
+.btn_loginpage:hover {
+    color: black;
+    background-color: white;
+}
+
+.signup-link {
+    color: white;
+}
+
+.signup-link a {
+    margin-left: 4px;
 }
