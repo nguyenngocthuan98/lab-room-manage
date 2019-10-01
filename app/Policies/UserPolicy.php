@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Config;
 
 class UserPolicy
 {
@@ -11,7 +12,7 @@ class UserPolicy
 
     public function before(User $user)
     {
-        if ($user->role == 2) {
+        if ($user->role == Config::get('code.user.role.Admin')) {
             return true;
         }
     }
@@ -36,7 +37,7 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        return $user->role == 2;
+        return $user->role == Config::get('user.role.Admin');
     }
 
     /**
@@ -48,7 +49,7 @@ class UserPolicy
      */
     public function update(User $user) 
     {
-        return $user->role == 1;
+        return $user->role == Config::get('user.role.Technicians');
     }
 
     /**
@@ -60,7 +61,7 @@ class UserPolicy
      */
     public function delete(User $user)
     {
-        return $user->role == 2;
+        return $user->role == Config::get('user.role.Admin');
     }
 
     /**
