@@ -10,6 +10,7 @@ use App\Models\Room;
 use Faker\Generator as Faker;
 use App\Models\Device;
 
+
 class ComputerController extends Controller
 {
     /**
