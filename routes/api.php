@@ -19,7 +19,7 @@ use App\Http\Controllers\Api\TagController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::group(['namespace' => 'Api', 'middleware' => 'auth:api'], function () {
+Route::group(['namespace' => 'Api'], function () {
     Route::get('users', 'UserController@index');
     Route::get('users/{id}', 'UserController@show');
     Route::post('users', 'UserController@store');
@@ -57,7 +57,7 @@ Route::group(['namespace' => 'Api'], function () {
     Route::delete('computers/{id}', 'ComputerController@destroy');
 });
 
-Route::prefix('v1')->namespace('Api')->middleware('auth:api')->group(function () {
+Route::prefix('v1')->namespace('Api')->group(function () {
     // Login
     Route::post('/login','AuthController@postLogin');
     // Register

@@ -28,4 +28,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function scopeUserRole($query,$param)
+    {
+        return $query->where('role','like', '%'.$param.'%');
+    }
 }

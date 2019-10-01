@@ -17,17 +17,26 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $params = $request->query('col');
+        // dd($params);
         $filters = request()->only('action', 'key');
 
         if($filters && $filters['action'] == 'search'){
             //For search
             $userList = DB::table('users')->where('name', 'like', '%'.$filters['key'].'%')
                                         ->orderBy('id','ASC')->paginate(10);
-        }else{
-            //For all user
-            $userList = DB::table('users')->orderBy('id','DESC')->paginate(10);
+        }
+        else {
+            if (isset($params)) {
+                $params = explode(' ', $request->query('col'));
+                $userList = User::userRole($params[0])->paginate(10);
+            }
+            else{
+                //For all user
+                $userList = DB::table('users')->orderBy('id','DESC')->paginate(10);
+            }
         }        
         return view('users.index', ['userList' => $userList]);
     }

@@ -5,15 +5,25 @@
 @section('body')
 	<div class="top-list-user">
 		<button id="add-new-user" type="button" class="btn btn-primary"><a href="{{ url('users/create') }}">+</a></button>
-		
+		{{-- <div class="filter-user"> --}}
 		<div class="search-user">
-			<form action="{{ url('users') }}" method="GET">
+			<form action="{{ url('users') }}" method="GET" class="filter-user">
+			    <select id="select-box1" name="col" class="select-user">
+  				  <option value="0">Admin</option>
+				  <option value="1">Technicians</option>
+				  <option value="2">Teacher</option>
+			    </select>
+				<button type="submit" class="btn btn-primary btn-filter"><i class="fa fa-filter"></i></button>
+			</form>
+
+			<form action="{{ url('users') }}" method="GET" class="form-search-user">
 				<input type="hidden" name="action" value="search">
 				<input type="text" name="key" id="input" class="form-control" value="" placeholder="Search User ...">
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
 		</div>
 	</div>
+
 	<table class="list-user">
 		@if(session('add'))
 			<div class="alert alert-success alert-dismissible notif-user">
@@ -70,4 +80,32 @@
 	<div class="pagination-user">
 		{{ $userList->links() }}
 	</div>
+{{-- 	<script>
+		$("select-user").on("click" , function() {
+		  
+		  $(this).parent(".select-box").toggleClass("open");
+		  
+		});
+
+		$(document).mouseup(function (e)
+		{
+		    var container = $(".select-box");
+
+		    if (container.has(e.target).length === 0)
+		    {
+		        container.removeClass("open");
+		    }
+		});
+
+
+		$("select-user").on("change" , function() {
+		  
+		  var selection = $(this).find("option:selected").text(),
+		      labelFor = $(this).attr("id"),
+		      label = $("[for='" + labelFor + "']");
+		    
+		  label.find(".label-desc").html(selection);
+		    
+		});
+	</script> --}}
 @endsection
